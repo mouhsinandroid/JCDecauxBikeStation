@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bicycleStation"
+            type="com.mouhsinbourqaiba.jcdecaux.model.BicycleStation" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".view.DetailFragment">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@color/yellow"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_bicycle"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/capacityStyle"
+            android:layout_marginTop="16dp"
+            android:text="@{bicycleStation.totalStands.capacity.toString()}"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.637"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            style="@style/textStyle"
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{bicycleStation.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            style="@style/descriptionStyle"
+            android:id="@+id/textView6"
+            android:layout_marginTop="8dp"
+            android:text="@{bicycleStation.address}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            style="@style/textStyle.availability"
+            android:id="@+id/textView7"
+            android:layout_marginTop="8dp"
+            tools:text="TextView"
+            bikes="@{bicycleStation.totalStands.availabilities.bikes}"
+            stands="@{bicycleStation.totalStands.availabilities.stands}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:text="@{bicycleStation.status}"
+            tools:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/statusStyle" />
+
+        <TextView
+            android:id="@+id/textView11"
+            style="@style/descriptionStyle"
+            electricalBikes="@{bicycleStation.totalStands.availabilities.electricalBikes}"
+            electricalInternalBatteryBikes="@{bicycleStation.totalStands.availabilities.electricalInternalBatteryBikes}"
+            electricalRemovableBatteryBikes="@{bicycleStation.totalStands.availabilities.electricalRemovableBatteryBikes}"
+            mechanicalBikes="@{bicycleStation.totalStands.availabilities.mechanicalBikes}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="TextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

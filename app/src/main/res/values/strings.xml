@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JCDecaux Test</string>
+    <string name="error_message">An error occurred while loading data</string>
+
+    <string name="latLong">Longitude: %.3f, Latitude: %.3f</string>
+    <string name="enable_gps">Please enable your gps</string>
+    <string name="permission_request">App requires location permission</string>
+    <string name="label_list_station_fragment">Bike Stations</string>
+    <string name="label_details">Details Station</string>
+
+    <string name="Details">Details</string>
+
+
+</resources>
